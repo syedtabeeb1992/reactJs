@@ -1,0 +1,19 @@
+.heading {
+  color: red;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+pre {
+  background-color: lightgray;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.code-container{
+  border-bottom: 1px solid #6e6e6e;
+}
