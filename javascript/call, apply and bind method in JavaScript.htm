@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0" />
+    <title>call, apply and bind method in JavaScript</title>
+  </head>
+  <body>
+    <h1>call, apply and bind method in JavaScript</h1>
+
+    <script>
+      let name = {
+        firstname: "Syed",
+        lastname: "Tabeeb",
+      };
+      let printFullName = function (hometown, state) {
+        console.log(this.firstname + " " + this.lastname +" From "+ hometown + " State   " + state);
+      };
+      let name2 = {
+        firstname: "Anil",
+        lastname: "Kumle",
+      };
+
+      //function borrowing : We can borrow functions from other objects and use it with data of other objects  "Call METHOD"
+      printFullName.call(name, "Bangalore", "Karnataka");
+      printFullName.call(name2, "Mumbai", "Maharashtra");
+
+
+      //Apply method
+      printFullName.apply(name, ["Bangalore", "Karnataka"]);
+
+      //bind method
+
+      let printMyName =   printFullName.bind(name, "Bangalore", "Karnataka");
+
+      console.log(printMyName);
+      printMyName();
+
+    </script>
+  </body>
+</html>

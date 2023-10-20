@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polyfills</title>
+  </head>
+  <body>
+    <h1>Polyfills</h1>
+
+    <script>
+      let name = {
+        firstname: "Syed",
+        lastname: "Tabeeb",
+      };
+      let printFullName = function (hometown, state) {
+        console.log(this.firstname + " " + this.lastname + "Hometown " + hometown + "SSSTAET" );
+      };
+
+      let printMyName = printFullName.bind(name, " DDD")
+
+      printMyName()
+
+
+      Function.prototype.mybind  = function(...args) {
+        let obj = this,
+        parms = args.slice(1)
+            return function() {
+              obj.apply(args[0], parms);
+            }
+      }
+
+
+      let printMyName2 = printFullName.mybind(name, "Bangalorsse")
+      printMyName2();
+    </script>
+  </body>
+</html>

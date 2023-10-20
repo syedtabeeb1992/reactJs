@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>mergining 2 objects and filtering</h1>
+    <script>
+      const obj1 = {
+        firstname: "syed",
+      };
+
+      const obj2 = {
+        lastname: "Tabeeb",
+      };
+
+      const obj3 = {
+        state: "karnataka",
+      };
+
+      const mergedObject = { ...obj1, ...obj2, ...obj3 };
+
+      console.log(mergedObject);
+
+      const mergedObjects = Object.assign({}, obj1, obj2, obj3);
+
+      console.log(mergedObjects);
+
+      const newobj = {
+        name: "Tabeeb",
+        sate: null,
+        occupation: undefined,
+      };
+
+      const filteredPairs = Object.entries(newobj).filter(([key, value]) => value !== null && value !== undefined);
+;
+
+      const filteredObject = Object.fromEntries(filteredPairs);
+
+      console.log(filteredObject);
+
+
+      const tesobj = {
+        firstname:"syed",
+        lastname:"tabeeb",
+        state:"karnataka",
+        others:undefined
+      }
+
+
+      const newtestpbj = Object.entries(tesobj).filter(([key, value]) => value !== null && value !== undefined)
+
+      console.log("newtestpbj",newtestpbj);
+
+    </script>
+  </body>
+</html>

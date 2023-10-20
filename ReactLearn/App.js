@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Hoc from "./Components/hoc/hoc";
+
+
 
 //React ELEMENT
 const heading = <h3>I am an element</h3>;
@@ -43,6 +46,12 @@ const App = () => {
 
               <p><b>Component composition</b> : composing 2 components in one component </p>
         </div>
+      </div>
+
+
+      <div className="code-container">
+        <h2>Others</h2>
+              <Hoc/>
       </div>
     </div>
   );
