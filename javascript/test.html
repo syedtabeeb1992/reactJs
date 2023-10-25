@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .myIndia {
+        width: 300px;
+        height: 150px;
+        border-top: 50px solid #ff9933;
+        border-bottom: 50px solid #128807;
+        box-shadow: 0px 5px 20px #777;
+        box-sizing: border-box;
+      }
+
+      .newflag {
+        margin-top: 50px;
+        width: 300px;
+        height: 150px;
+        border-top: 50px solid red;
+        border-bottom: 50px solid green;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="myIndia"></div>
+
+    <div class="newflag"></div>
+    <script>
+
+
+
+      function increment() {
+          let a=2
+
+          return  function () {
+            return a ++
+          }
+        }
+
+        const callfunc = increment()
+
+        console.log(callfunc() )
+        console.log(callfunc() )
+        console.log(callfunc() )
+    </script>
+  </body>
+</html>

@@ -48,7 +48,7 @@ pre {
 .res-card{
   margin: 5px;
   width: 200px;
-  height: 300px;
+  height: 400px;
   border: 1px solid black;
   padding: 5px;
 }
@@ -58,5 +58,9 @@ pre {
 }
 .res-logo {
   width: 100%;
+}
 
+.filter-btn{
+  margin: 10px;
+  cursor: pointer;
 }
