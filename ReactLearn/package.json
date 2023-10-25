@@ -1,28 +1,24 @@
 {
-  "homepage" : "http://syedtabeeb1992.github.io/reactJs/ReactLearn/",
+  "homepage": "http://syedtabeeb1992.github.io/reactJs/ReactLearn/",
   "name": "Tabeeb",
   "version": "1.0.0",
   "description": "r",
   "scripts": {
-
-   
     "start": "parcel index.html  --no-cache",
     "predeploy": "npm run build",
-     "deploy":"gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "build": "parcel build index.html",
     "test": "jest"
-
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shrinivasH/chapter03.git"
+    "url": ""
   },
   "author": "Tabeeb",
   "license": "",
   "bugs": {
-    "url": "https://github.com/shrinivasH/chapter03/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/shrinivasH/chapter03#readme",
   "dependencies": {
     "gh-pages": "^6.0.0",
     "react": "^18.2.0",
