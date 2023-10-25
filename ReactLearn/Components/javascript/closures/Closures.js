@@ -2,7 +2,9 @@ import React from 'react'
 
 const Closures = () => {
   return (
-    <div>Closures</div>
+    <div>
+      <h1>Closures</h1>
+    </div>
   )
 }
 
