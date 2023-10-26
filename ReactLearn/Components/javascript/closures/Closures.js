@@ -2,7 +2,7 @@ import React from 'react'
 
 const Closures = () => {
   return (
-    <div>
+    <div className="code-container">
       <h1>Closures</h1>
     </div>
   )

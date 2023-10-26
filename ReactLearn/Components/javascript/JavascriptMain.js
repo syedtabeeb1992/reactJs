@@ -1,12 +1,18 @@
-import React from 'react'
-import Closures from './closures/Closures'
+import React from "react";
+import Closures from "./closures/Closures";
+import EventLoop from "./eventloop/EventLoop";
+import Promises from "./promise/Promises";
+import Hoisting from "./hoisting/Hoisting";
 
 const JavascriptMain = () => {
   return (
-    <div>
-        <Closures/>
+    <div className="code-container">
+      <Closures />
+      <EventLoop />
+      <Promises />
+      <Hoisting />
     </div>
-  )
-}
+  );
+};
 
-export default JavascriptMain
+export default JavascriptMain;
