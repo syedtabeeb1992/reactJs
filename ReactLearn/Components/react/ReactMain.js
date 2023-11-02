@@ -1,5 +1,6 @@
 import React from "react";
 import Hoc from "../hoc/hoc";
+import Playground from "./Playground";
 //React ELEMENT
 const heading = <h3>I am an element</h3>;
 
@@ -49,6 +50,11 @@ const ReactMain = () => {
       <div className="code-container">
         <h2>Others</h2>
         <Hoc />
+      </div>
+      
+      <div className="code-container">
+        <h2>Playground</h2>
+        <Playground />
       </div>
     </div>
   );

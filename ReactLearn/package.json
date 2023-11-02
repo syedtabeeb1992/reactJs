@@ -1,5 +1,4 @@
 {
-
   "name": "Tabeeb",
   "version": "1.0.0",
   "description": "r",
@@ -21,10 +20,13 @@
     "url": ""
   },
   "dependencies": {
+    "axios": "^1.6.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
     "gh-pages": "^6.0.0",
     "parcel": "^2.9.3",
     "process": "^0.11.10"

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hoisting = () => {
   return (
-    <div>Hoisting</div>
+    <div className="code-container">Hoisting</div>
   )
 }
 

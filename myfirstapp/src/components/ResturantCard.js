@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ResturantCard = (props) => {
-  console.log("SSSS", props);
   return (
     <div className="res-card">
       <img className="res-logo" src={props.resData.img} />

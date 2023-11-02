@@ -1,37 +1,48 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import Hoc from "./Components/hoc/hoc";
-import Closures from "./Components/javascript/closures/Closures";
+import ReactDOM from "react-dom";
 import JavascriptMain from "./Components/javascript/JavascriptMain";
 import ReactMain from "./Components/react/ReactMain";
 
 const App = () => {
-  const [language, setlanguage] = useState("all");
+  const [language, setLanguage] = useState("all");
 
-  const reactclicked = () => {
-    setlanguage("react");
+  const reactClicked = () => {
+    setLanguage("react");
   };
 
-  const javascriptclicked = () => {
-    setlanguage("javascript");
+  const javascriptClicked = () => {
+    setLanguage("javascript");
   };
 
   const all = () => {
-    setlanguage("all");
+    setLanguage("all");
   };
 
   return (
     <div>
-      <div className="">
-        <button onClick={reactclicked}>React</button>
-        <button onClick={javascriptclicked}>javascriptclicked</button>
+
+    
+<div className="">
+        <button onClick={reactClicked}>React</button>
+        <button onClick={javascriptClicked}>JavaScript</button>
         <button onClick={all}>All</button>
       </div>
-
-      {language === "react" ? <ReactMain /> : <JavascriptMain />}
+      {
+        language === "react" ? (
+          // Your React-specific content here
+          <ReactMain />
+        ) : language === "javascript" ? (
+          <JavascriptMain />
+        ) : (
+          <div>
+            <ReactMain />
+            <JavascriptMain />
+          </div>
+        )
+      } 
     </div>
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+const root = document.getElementById("root");
+ReactDOM.render(<App />, root);

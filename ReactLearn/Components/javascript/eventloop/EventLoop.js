@@ -2,7 +2,7 @@ import React from 'react'
 
 const EventLoop = () => {
   return (
-    <div>
+    <div className="code-container">
 
         <h1>Event Loop</h1>
         <p>Event loop is a concept that helps manage async code execution. It is responsible for handling events and callbacks</p>
