@@ -1,57 +1,71 @@
 import React, { useEffect, useState } from "react";
 import ResturantCard from "./ResturantCard";
-// import resList from "../utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = (props) => {
-
-
-  // let originalResList =   resList
   let [listOfRes, setListOfRes] = useState([]);
+  const [seatchText, setsearchtext] = useState("");
+  let [isLoading, setisLoading] = useState(true);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-    console.log("from effect",listOfRes );
-  }, [])
+    console.log("from effect", listOfRes);
+  }, []);
 
   const fetchData = async () => {
     const data = await fetch("https://demo1283547.mockable.io/learn");
     const json = await data.json();
     console.log("json data", json);
-    setListOfRes(json); // Update listOfRes with the fetched data
-  }
-  
+    setisLoading(false);
+    setListOfRes(json);
+  };
 
+  const filterr = () => {
+    const filteredRes = listOfRes.filter((res) => {
+      return res.rating > 4;
+    });
+    setListOfRes(filteredRes);
+  };
 
-  const filterr = ()=>{
-    filteredRes = listOfRes.filter((res) => res.rating > 4);
-    setListOfRes(filteredRes)
-  }
-
-  const clear = () =>{
+  const clear = () => {
     console.log("clear", listOfRes);
-    setListOfRes(listOfRes)
-  }
+    setListOfRes(originalResList);
+  };
   return (
     <div className="body">
       <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={filterr}
-        >
+        <div className="search">
+          <input
+            type="text"
+            className="searchbox"
+            value={seatchText}
+            onChange={(e) => {
+              setsearchtext(e.target.value);
+            }}
+          />
+
+          <button
+            onClick={() => {
+              console.log(seatchText);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <button className="filter-btn" onClick={filterr}>
           Top rated resturansts
         </button>
 
-        <button onClick={clear}  >Clear filter</button>
+        <button onClick={clear}>Clear filter</button>
       </div>
 
-<div className="resturant-container">
+      {isLoading ? <Shimmer /> : ""}
+
+      <div className="resturant-container">
         {listOfRes.map((restaurant) => (
           <ResturantCard resData={restaurant} />
         ))}
-      </div> 
-
-
-
+      </div>
     </div>
   );
 };
