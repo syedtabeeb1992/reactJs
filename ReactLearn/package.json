@@ -5,8 +5,8 @@
   "homepage": "http://syedtabeeb1992.github.io/reactJs/ReactLearn/",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "start": "parcel index.html  --no-cache",
+    "deploy": "gh-pages -d /dist",
+    "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },
