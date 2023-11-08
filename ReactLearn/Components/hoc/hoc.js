@@ -10,7 +10,7 @@ const Hoc = () => {
         <p>Basically HOC is a technique for re-using component logic</p>
 
 
-<Sudent1/>
+        <Sudent1/>
         <Student2/>
 
         

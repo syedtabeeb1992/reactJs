@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 
 const Body = (props) => {
   let [listOfRes, setListOfRes] = useState([]);
-  const [seatchText, setsearchtext] = useState("");
+  const [searchText, setSearchText] = useState("");
   let [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
@@ -31,6 +31,41 @@ const Body = (props) => {
     console.log("clear", listOfRes);
     setListOfRes(originalResList);
   };
+
+  const searchclick = (e) => {
+    console.log("sadasd", searchtext);
+  };
+
+  // const searchClick = (e) => {
+  //   console.log("Search Text: ", searchText); // Assuming searchText is your state variable
+
+  //   const newfiltered = listOfRes.filter((res) => {
+
+  //       return res.name
+  //       console.log("RES", res.name);
+  //     // res.name
+  //     // if (res.name.searchText) {
+  //     //   // Compare with the value in searchText
+  //     //   console.log(res.name);
+  //     //   return res.name;
+  //     // }
+  //   });
+
+  //   console.log("newfiltered", newfiltered);
+
+  //   setListOfRes(newfiltered);
+  // };
+  const searchClick = (e) => {
+    console.log("Search Text: ", searchText); // Assuming searchText is your state variable
+  
+    const newfiltered = listOfRes.filter((res) => {
+      return res.name.includes(searchText); // Use includes to check if name contains searchText
+    });
+  
+    console.log("newfiltered", newfiltered);
+  
+    setListOfRes(newfiltered)
+  };
   return (
     <div className="body">
       <div className="filter">
@@ -38,15 +73,15 @@ const Body = (props) => {
           <input
             type="text"
             className="searchbox"
-            value={seatchText}
+            value={searchText}
             onChange={(e) => {
-              setsearchtext(e.target.value);
+              setSearchText(e.target.value);
             }}
           />
 
           <button
-            onClick={() => {
-              console.log(seatchText);
+            onClick={(f) => {
+              searchClick("sssssdsd");
             }}
           >
             Search

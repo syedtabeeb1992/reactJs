@@ -3,6 +3,7 @@ import Closures from './closures/Closures'
 import EventLoop from './eventloop/EventLoop'
 import Promises from './promise/Promises'
 import Hoisting from './hoisting/Hoisting'
+import Asyncawait from './asyncawait/Asyncawait'
 
 const JavascriptMain = () => {
   return (
@@ -12,6 +13,7 @@ const JavascriptMain = () => {
         <EventLoop/>
         <Promises/>
         <Hoisting/>
+        <Asyncawait/>
     </div>
   )
 }

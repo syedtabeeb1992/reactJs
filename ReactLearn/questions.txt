@@ -1,0 +1,17 @@
+JAVASCRIPT
+- Closures //
+- Promises
+- let const var
+- Deep copt and shallow copy
+- async and await
+- event loop//
+- types of storage
+
+
+
+
+REACT
+- All hooks
+- All hooks- diff between func and class components
+- react design patterns
+- what is virtual dom

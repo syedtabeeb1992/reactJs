@@ -1,99 +1,112 @@
+
 import React, { useState } from "react";
 
 const Playground = () => {
-  const [list, setlist] = useState([
-    { name: "Tabeeb", age: 20 },
-    { name: "Pragya", age: 34 },
-  ]);
+  const [input1, setInput1] = useState(0);
+  const [input2, setInput2] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(true);
 
-  const [formdata, setFormData] = useState({
-    name: "",
-    age: "",
-  });
+  const handleInputChange = (e, inputType) => {
+    const value = parseInt(e.target.value, 10);
 
-  const handleonchange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+    console.log(value);
 
-  const adddata = () => {
-    const newdata = {
-      name: formdata.name,
-      age: formdata.age,
-    };
-    setlist((prevData) => {
-      return [...prevData, newdata];
-    });
-  };
-
-  const deletenode = (item) => {
-    const updatedItems =[...list] ;
-    updatedItems.splice(item, 1);
-    setlist(updatedItems);
-  };
-
-
-
-  const [numbercounter, setnumbercounter] = useState(1)
-  const counter = () =>{
-
-  
-
-    for(let i=0; i<=5; i++) {
-        
-        return setTimeout(() => {
-            setnumbercounter(numbercounter+1)
-        }, 1000);
-
+    if (!isNaN(value)) {
+      if (inputType === "input1") {
+        setInput1(value);
+      } else {
+        setInput2(value);
+      }
     }
 
-    
-  }
-  const minuscounter = () =>{
-    setnumbercounter(numbercounter-1)
-  }
+    setIsDisabled(isNaN(value) || isNaN(input1) || isNaN(input2));
+  };
+
+  const add = () => {
+    const sum = input1 + input2;
+    setTotal(sum);
+  };
 
   return (
     <div>
-      <div className="">
-        <input
-          type="text"
-          placeholder="name"
-          name="name"
-          onChange={handleonchange}
-        ></input>
-        <input
-          type="text"
-          placeholder="Age"
-          name="age"
-          onChange={handleonchange}
-        ></input>
-        <button onClick={adddata}> Add </button>
-      </div>
-
-      {list.map((result) => {
-        return (
-          <div
-            onClick={() => {
-              deletenode(result.name);
-            }}
-          >
-            Name: {result.name} - Age : {result.age}{" "}
-          </div>
-        );
-      })}
-
-
-      <button className="counter" onClick={counter}>COUNTER</button>
-      <p>{numbercounter}</p>
-      <button className="" onClick={minuscounter}>Minus Counter</button>
+      <input
+        type="text"
+        placeholder="Enter number"
+        value={input1}
+        onChange={(e) => handleInputChange(e, "input1")}
+      />
+      <input
+        type="text"
+        placeholder="Enter number"
+        value={input2}
+        onChange={(e) => handleInputChange(e, "input2")}
+      />
+      <button onClick={add} disabled={isDisabled}>
+        Add
+      </button>
+      <p>{total}</p>
     </div>
-
-    
   );
 };
 
 export default Playground;
+
+// import React, { useState } from "react";
+
+// const Playground = () => {
+//   const [input1, setInput1] = useState(0);
+//   const [input2, setInput2] = useState(0);
+//   const [total, setTotal] = useState(0);
+
+//   const [isDisabled, setisDisabled] = useState(true);
+
+//   const handleInputChange1 = (e) => {
+//     const value = e.target.value;
+//     setInput1(parseInt(value, 10));
+
+//     if (value && input2) {
+//       setisDisabled(false);
+//     } else {
+//       setisDisabled(true);
+//     }
+//   };
+
+//   const handleInputChange2 = (e) => {
+//     const value = e.target.value;
+//     setInput2(parseInt(value, 10));
+//     if (input1 && value) {
+//       setisDisabled(false);
+//     } else {
+//       setisDisabled(true);
+//     }
+//   };
+
+//   const add = () => {
+//     const sum = input1 + input2;
+//     setTotal(sum);
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         placeholder="Enter number"
+//         value={input1}
+//         onChange={handleInputChange1}
+//       />
+//       <input
+//         type="text"
+//         placeholder="Enter number"
+//         value={input2}
+//         onChange={handleInputChange2}
+//       />
+//       <button onClick={add} disabled={isDisabled}>
+//         Add
+//       </button>
+//       <p>{total}</p>
+//     </div>
+//   );
+// };
+
+// export default Playground;
