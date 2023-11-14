@@ -36,25 +36,6 @@ const Body = (props) => {
     console.log("sadasd", searchtext);
   };
 
-  // const searchClick = (e) => {
-  //   console.log("Search Text: ", searchText); // Assuming searchText is your state variable
-
-  //   const newfiltered = listOfRes.filter((res) => {
-
-  //       return res.name
-  //       console.log("RES", res.name);
-  //     // res.name
-  //     // if (res.name.searchText) {
-  //     //   // Compare with the value in searchText
-  //     //   console.log(res.name);
-  //     //   return res.name;
-  //     // }
-  //   });
-
-  //   console.log("newfiltered", newfiltered);
-
-  //   setListOfRes(newfiltered);
-  // };
   const searchClick = (e) => {
     console.log("Search Text: ", searchText); // Assuming searchText is your state variable
   

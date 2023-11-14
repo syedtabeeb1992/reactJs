@@ -2,6 +2,34 @@
 import React, { useState } from "react";
 
 const Playground = () => {
+
+
+  // return ony details  of those  who scored  more than 60 and roll nu,mber >2
+let students = [
+  {name:"syed", rollnumber:2, marks:80},
+  {name:"tabeeb", rollnumber:4, marks:30},
+  {name:"tameem", rollnumber:8, marks:60},
+  {name:"muneeb", rollnumber:9, marks:78}
+
+]
+
+
+
+const a = students.reduce((acc, curr)=>{
+    return  acc+curr.marks
+},0)
+console.log("STUDENTS", a);
+
+
+
+
+
+
+
+
+
+
+  // ------------------------------------------
   const [input1, setInput1] = useState(0);
   const [input2, setInput2] = useState(0);
   const [total, setTotal] = useState(0);

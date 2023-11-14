@@ -4,6 +4,7 @@ import EventLoop from './eventloop/EventLoop'
 import Promises from './promise/Promises'
 import Hoisting from './hoisting/Hoisting'
 import Asyncawait from './asyncawait/Asyncawait'
+import Playground from '../react/Playground'
 
 const JavascriptMain = () => {
   return (
@@ -14,6 +15,7 @@ const JavascriptMain = () => {
         <Promises/>
         <Hoisting/>
         <Asyncawait/>
+        <Playground/>
     </div>
   )
 }
