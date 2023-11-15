@@ -13,11 +13,24 @@ const Body = (props) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://demo1283547.mockable.io/learn");
-    const json = await data.json();
-    console.log("json data", json);
+    // const data = await fetch("https://demo1283547.mockable.io/learn");
+  const data = await fetch( "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const swiggyJsonData = await data.json();
+    console.log("json data", swiggyJsonData);
+
+    const restaurant_list = "restaurant_grid_listing";
+    const resturantData = swiggyJsonData.data?.cards?.find((card)=>{
+      return card.card?.card?.id===restaurant_list;
+    })
+
+    const resturantList = resturantData.card.card.gridElements.infoWithStyle.restaurants.map(res=>(
+      res.info
+    ));
+
     setisLoading(false);
-    setListOfRes(json);
+    setListOfRes(resturantList);
+
+    console.log("LISSSS", listOfRes);
   };
 
   const filterr = () => {

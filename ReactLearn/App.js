@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import JavascriptMain from "./Components/javascript/JavascriptMain";
 import ReactMain from "./Components/react/ReactMain";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const App = () => {
   const [language, setLanguage] = useState("all");
@@ -43,6 +44,12 @@ const App = () => {
     </div>
   );
 };
+
+// const appRouter = createBrowserRouter([
+//   {
+//     path:"/"
+//   }
+// ])
 
 const root = document.getElementById("root");
 ReactDOM.render(<App />, root);

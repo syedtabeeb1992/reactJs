@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import { Header } from "./components/Header";
 import Body from "./components/Body";
 
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+
 const App = () => {
   const [isRunning, setisRunninf] = useState(false);
   const [counter, setcounter] = useState(0);
@@ -35,18 +40,37 @@ const App = () => {
   return (
     <div>
       <div className="">
-        <button onClick={startcounter}> counter start </button>
-        <button onClick={pausecounter}> pause start </button>
-        <button onClick={stopcounter}> pause start </button>
-
-        <h1>{counter}</h1>
-
         <Header />
-        <Body />
+        <Outlet />
       </div>
     </div>
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+        errorElement: <Error />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<RouterProvider router={appRouter} />);
