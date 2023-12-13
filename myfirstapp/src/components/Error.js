@@ -11,7 +11,7 @@ const Error = () => {
   return (
     <div>Error
 
-        <h1>{useRouteError().status + useRouteError().statusText}</h1>
+        <h1>{useRouteError().status  + useRouteError().statusText}</h1>
     </div>
   );
 };

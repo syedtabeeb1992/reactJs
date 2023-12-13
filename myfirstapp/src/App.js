@@ -7,36 +7,12 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import ResturantMenu from "./components/ResturantMenu";
 
 const App = () => {
-  const [isRunning, setisRunninf] = useState(false);
-  const [counter, setcounter] = useState(0);
 
-  useEffect(() => {
-    let timer;
-    if (isRunning === true) {
-      timer = setInterval(() => {
-        setcounter((prevCounter) => prevCounter + 1);
-      }, 1000);
-    }
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [isRunning]);
 
-  const startcounter = () => {
-    setisRunninf(true);
-  };
-
-  const pausecounter = () => {
-    setisRunninf(false);
-  };
-
-  const stopcounter = () => {
-    setcounter(0);
-    setisRunninf(true);
-  };
   return (
     <div>
       <div className="">
@@ -67,6 +43,11 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
         errorElement: <Error />,
       },
+      {
+        path: "/resturants/:resId",
+        element: <ResturantMenu />,
+        errorElement: <Error />,
+      }
     ],
     errorElement: <Error />,
   },

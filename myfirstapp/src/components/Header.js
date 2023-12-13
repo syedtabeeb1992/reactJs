@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { LOGO_URL } from '../utils/constants';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
 
@@ -19,8 +20,8 @@ const clicked = ()=>{
   
         <div className="navitems">
           <ul>
-            <li>Homes</li>
-            <li>About Us</li>
+            <li> <Link to="/"> Homes</Link></li>
+            <li><Link to="/about">  About Us </Link></li>
             <li>Contact Us</li>
             <li>Carts</li>
             <li> <button onClick={clicked}> {isLogin ?"lougout":"login"} </button> </li>

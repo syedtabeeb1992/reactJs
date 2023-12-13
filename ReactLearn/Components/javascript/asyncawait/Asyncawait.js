@@ -109,6 +109,30 @@ const AsyncAwaitComponent = () => {
         operation...is resolved. Once the Promise is resolved, the function
         continues from where it was paused.
       </p>
+
+
+
+
+      <div className="code">
+        <pre>
+          <code>
+            {` 
+  async function fetchData() {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      console.log('GET Request Data:', data);
+    } catch (error) {
+      console.error('GET Request Error:', error);
+    }
+  }`}
+          </code>
+        </pre>
+      </div>
+
     </div>
   );
 };
